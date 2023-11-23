@@ -265,7 +265,7 @@ const searchBarFunction = () => {
 	})
 
     // Fetch Belmont data initially
-	fetch(`http://localhost:5000/pmsstock/19?page=${currentPage}&limit=200`)
+	fetch(`http://localhost:5000/pmsstock/19?page=${currentPage}&limit=50`)
         .then((res) => res.json())
         .then((response) => {
             belmontData = response;
@@ -276,7 +276,7 @@ const searchBarFunction = () => {
         });
 
     // Fetch Richmond data initially
-    fetch(`http://localhost:5000/pmsstock/20?page=${currentPage}&limit=100`)
+    fetch(`http://localhost:5000/pmsstock/20?page=${currentPage}&limit=50`)
         .then((res) => res.json())
         .then((response) => {
             richmondData = response;
