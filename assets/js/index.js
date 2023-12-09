@@ -8,8 +8,8 @@ let currentPage = 1;
 
 
 const updatePageContent = () => {
-	// fetch('http://localhost:5000/pmsstock?Location=19')
-	fetch(`http://localhost:5000/pmsstock/19?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com//pmsstock/19?page=${currentPage}&limit=20`)
+	// fetch(`http://localhost:5000/pmsstock/19?page=${currentPage}&limit=20`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
