@@ -8,7 +8,7 @@ let currentPage = 1;
 
 
 const updatePageContent = () => {
-	fetch(`https://my-server-u7xs.onrender.com//pmsstock/19?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com/pmsstock/19?page=${currentPage}&limit=20`)
 	// fetch(`http://localhost:5000/pmsstock/19?page=${currentPage}&limit=20`)
 		.then((respond) => {
 			console.log(respond.status)
@@ -39,8 +39,8 @@ const updatePageContent = () => {
 			document.getElementById("belmont_table_body").innerHTML = storedData
 		})
 
-	// fetch('http://localhost:5000/pmsstock?Location=20')
-	fetch(`http://localhost:5000/pmsstock/20?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com/pmsstock/20?page=${currentPage}&limit=20`)
+	// fetch(`http://localhost:5000/pmsstock/20?page=${currentPage}&limit=20`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -70,8 +70,8 @@ const updatePageContent = () => {
 			document.getElementById('richmond_table_body').innerHTML = storedData;
 		})
 
-	// // fetch('http://localhost:5000/pmsstock?Location=1')
-	fetch(`http://localhost:5000/pmsstock/1?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com/pmsstock/1?page=${currentPage}&limit=20`)
+	// fetch(`http://localhost:5000/pmsstock/1?page=${currentPage}&limit=20`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -101,8 +101,8 @@ const updatePageContent = () => {
 			document.getElementById('hyderabad_table_body').innerHTML = storedData;
 		})
 
-	// fetch('http://localhost:5000/pmsstock?Location=17')
-	fetch(`http://localhost:5000/pmsstock/17?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com/pmsstock/17?page=${currentPage}&limit=20`)
+	// fetch(`http://localhost:5000/pmsstock/17?page=${currentPage}&limit=20`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -236,7 +236,8 @@ const searchBarFunction = () => {
 	let currentPage = 1;
 
 	// Fetch All data initially
-	fetch('http://localhost:5000/allpmcstocks')
+	// fetch('http://localhost:5000/allpmcstocks')
+	fetch(`https://my-server-u7xs.onrender.com/allpmcstocks`)
 		.then((response) => response.json())
 		.then((response) => {
 			allData = response;
@@ -275,7 +276,7 @@ const searchBarFunction = () => {
 };
 
 const updateTables = (data) => {
-	const tableIds = ['belmont_table_body', 'richmond_table_body'];
+	const tableIds = ['belmont_table_body', 'richmond_table_body', 'hariwdar_table_body', 'hyderabad_table_body'];
 
 	tableIds.forEach((tableId) => {
 		let storedFullData = '';
