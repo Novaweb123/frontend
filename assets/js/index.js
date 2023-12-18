@@ -8,8 +8,9 @@ let currentPage = 1;
 
 
 const updatePageContent = () => {
-	fetch(`https://my-server-u7xs.onrender.com/pmsstock/19?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Belmont?page=${currentPage}&limit=30`)
 	// fetch(`http://localhost:5000/pmsstock/19?page=${currentPage}&limit=20`)
+	// fetch(`http://localhost:5000/combinedstocks/Belmont?page=${currentPage}&limit=30`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -18,29 +19,29 @@ const updatePageContent = () => {
 			data = completeData;
 			data.map((e, index) => {
 				storedData += `<tr key=${e.ID}}>
-							<td>${e.Date_modified}</td>
-							<td>${e.ID}</td>
+							<td>${e.id}</td>
 							<td>${e.MSKU}</td>
 							<td>${e.Item_name}</td>
 							<td>${e.Quantity}</td>
-							<td>${e.Location}</td>
+							<td>${e.LocationName}</td>
 							<td>${e.Brand}</td>
 							<td>${e.Product_Category}</td>
 							<td>${e.Category}</td>
-							<td>${e.MRP}</td>
+							<td>${e.Purchase_amt}</td>
 							<td>${e.Item_Amount}</td>
 							<td>${e.Batch}</td>
-							<td>${e.Manf_date}</td>
-							<td>${e.Expiry_date}</td>
+							<td>${e.Date_modified}</td>
 							<td>${e.Available_Qty}</td>
 							<td>${e.Blocked_Qty}</td>
+							<td>${e.Sheet_name}</td>
 						</tr>`
 			})
 			document.getElementById("belmont_table_body").innerHTML = storedData
 		})
 
-	fetch(`https://my-server-u7xs.onrender.com/pmsstock/20?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Richmond?page=${currentPage}&limit=30`)
 	// fetch(`http://localhost:5000/pmsstock/20?page=${currentPage}&limit=20`)
+	// fetch(`http://localhost:5000/combinedstocks/Richmond?page=${currentPage}&limit=30`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -49,29 +50,29 @@ const updatePageContent = () => {
 			data = completeData;
 			data.map((e, key) => {
 				storedData += `<tr key=${e.id}>
-							<td>${e.Date_modified}</td>
-							<td>${e.ID}</td>
+							<td>${e.id}</td>
 							<td>${e.MSKU}</td>
 							<td>${e.Item_name}</td>
 							<td>${e.Quantity}</td>
-							<td>${e.Location}</td>
+							<td>${e.LocationName}</td>
 							<td>${e.Brand}</td>
 							<td>${e.Product_Category}</td>
 							<td>${e.Category}</td>
-							<td>${e.MRP}</td>
+							<td>${e.Purchase_amt}</td>
 							<td>${e.Item_Amount}</td>
 							<td>${e.Batch}</td>
-							<td>${e.Manf_date}</td>
-							<td>${e.Expiry_date}</td>
+							<td>${e.Date_modified}</td>
 							<td>${e.Available_Qty}</td>
 							<td>${e.Blocked_Qty}</td>
+							<td>${e.Sheet_name}</td>
 						</tr>`
 			})
 			document.getElementById('richmond_table_body').innerHTML = storedData;
 		})
 
-	fetch(`https://my-server-u7xs.onrender.com/pmsstock/1?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Hyderabad?page=${currentPage}&limit=30`)
 	// fetch(`http://localhost:5000/pmsstock/1?page=${currentPage}&limit=20`)
+	// fetch(`http://localhost:5000/combinedstocks/Hyderabad?page=${currentPage}&limit=30`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -80,29 +81,29 @@ const updatePageContent = () => {
 			data = completeData;
 			data.map((e, key) => {
 				storedData += `<tr key=${e.id}>
-							<td>${e.Date_modified}</td>
-							<td>${e.ID}</td>
+							<td>${e.id}</td>
 							<td>${e.MSKU}</td>
 							<td>${e.Item_name}</td>
 							<td>${e.Quantity}</td>
-							<td>${e.Location}</td>
+							<td>${e.LocationName}</td>
 							<td>${e.Brand}</td>
 							<td>${e.Product_Category}</td>
 							<td>${e.Category}</td>
-							<td>${e.MRP}</td>
+							<td>${e.Purchase_amt}</td>
 							<td>${e.Item_Amount}</td>
 							<td>${e.Batch}</td>
-							<td>${e.Manf_date}</td>
-							<td>${e.Expiry_date}</td>
+							<td>${e.Date_modified}</td>
 							<td>${e.Available_Qty}</td>
 							<td>${e.Blocked_Qty}</td>
+							<td>${e.Sheet_name}</td>
 						</tr>`
 			})
 			document.getElementById('hyderabad_table_body').innerHTML = storedData;
 		})
 
-	fetch(`https://my-server-u7xs.onrender.com/pmsstock/17?page=${currentPage}&limit=20`)
+	fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Haridwar?page=${currentPage}&limit=30`)
 	// fetch(`http://localhost:5000/pmsstock/17?page=${currentPage}&limit=20`)
+	// fetch(`http://localhost:5000/combinedstocks/Haridwar?page=${currentPage}&limit=30`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -111,22 +112,21 @@ const updatePageContent = () => {
 			data = completeData;
 			data.map((e, key) => {
 				storedData += `<tr key=${e.id}>
-							<td>${e.Date_modified}</td>
-							<td>${e.ID}</td>
+							<td>${e.id}</td>
 							<td>${e.MSKU}</td>
 							<td>${e.Item_name}</td>
 							<td>${e.Quantity}</td>
-							<td>${e.Location}</td>
+							<td>${e.LocationName}</td>
 							<td>${e.Brand}</td>
 							<td>${e.Product_Category}</td>
 							<td>${e.Category}</td>
-							<td>${e.MRP}</td>
+							<td>${e.Purchase_amt}</td>
 							<td>${e.Item_Amount}</td>
 							<td>${e.Batch}</td>
-							<td>${e.Manf_date}</td>
-							<td>${e.Expiry_date}</td>
+							<td>${e.Date_modified}</td>
 							<td>${e.Available_Qty}</td>
 							<td>${e.Blocked_Qty}</td>
+							<td>${e.Sheet_name}</td>
 						</tr>`
 			})
 			document.getElementById('hariwdar_table_body').innerHTML = storedData;
@@ -232,12 +232,13 @@ updatePageContent();
 
 const searchBarFunction = () => {
 	let allData = [];
-	const itemsPerPage = 30;
+	const itemsPerPage = 40;
 	let currentPage = 1;
 
 	// Fetch All data initially
 	// fetch('http://localhost:5000/allpmcstocks')
-	fetch(`https://my-server-u7xs.onrender.com/allpmcstocks`)
+	fetch('https://my-server-u7xs.onrender.com/allpmcstocks')
+	// fetch(`https://my-server-u7xs.onrender.com/allpmcstocks`)
 		.then((response) => response.json())
 		.then((response) => {
 			allData = response;
@@ -282,26 +283,26 @@ const updateTables = (data) => {
 		let storedFullData = '';
 		data.forEach((e) => {
 			storedFullData += `<tr key=${e.id}>
+									<td>${e.id}</td>
+									<td>${e.MSKU}</td>
+									<td>${e.Item_name}</td>
+									<td>${e.Quantity}</td>
+									<td>${e.LocationName}</td>
+									<td>${e.Brand}</td>
+									<td>${e.Product_Category}</td>
+									<td>${e.Category}</td>
+									<td>${e.Purchase_amt}</td>
+									<td>${e.Item_Amount}</td>
+									<td>${e.Batch}</td>
 									<td>${e.Date_modified}</td>
-		                            <td>${e.ID}</td>
-		                            <td>${e.MSKU}</td>
-		                            <td>${e.Item_name}</td>
-		                            <td>${e.Quantity}</td>
-		                            <td>${e.Location}</td>
-		                            <td>${e.Brand}</td>
-		                            <td>${e.Product_Category}</td>
-		                            <td>${e.Category}</td>
-		                            <td>${e.MRP}</td>
-		                            <td>${e.Item_Amount}</td>
-		                            <td>${e.Batch}</td>
-	                              	<td>${e.Manf_date}</td>
-		                            <td>${e.Expiry_date}</td>
-	                              	<td>${e.Available_Qty}</td>
-		                        	<td>${e.Blocked_Qty}</td>
-						  </tr>`;
+									<td>${e.Available_Qty}</td>
+									<td>${e.Blocked_Qty}</td>
+									<td>${e.Sheet_name}</td>
+						  		</tr>`;
 		});
 
 		const tableElement = document.getElementById(tableId);
+		console.log(tableElement);
 
 		if (tableElement) {
 			tableElement.innerHTML = storedFullData;
