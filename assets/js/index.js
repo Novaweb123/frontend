@@ -238,8 +238,8 @@ const searchBarFunction = (keys,tableId) => {
 
     // Fetch data for the specific table
     // fetch(`http://localhost:5000/combinedstocks/Belmont?${tableId}?page=${currentPage}&limit=30`)
-	fetch(`http://localhost:5000/allpmcstocks/${keys}`)
-	// fetch(`https://my-server-u7xs.onrender.com/allpmcstocks/${keys}`)
+	// fetch(`http://localhost:5000/allpmcstocks/${keys}`)
+	fetch(`https://my-server-u7xs.onrender.com/allpmcstocks/${keys}`)
         .then((response) => response.json())
         .then((response) => {
             tableData = response;
