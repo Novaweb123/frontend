@@ -7,9 +7,9 @@ let currentPage = 1;
 
 
 const updatePageContent = () => {
-	// fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Belmont?page=${currentPage}&limit=30`)
+	fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Belmont?page=${currentPage}&limit=30`)
 	// fetch(`http://localhost:5000/pmsstock/19?page=${currentPage}&limit=20`)
-	fetch(`http://localhost:5000/combinedstocks/Belmont?page=${currentPage}&limit=30`)
+	// fetch(`http://localhost:5000/combinedstocks/Belmont?page=${currentPage}&limit=30`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -38,9 +38,9 @@ const updatePageContent = () => {
 			document.getElementById("belmont_table_body").innerHTML = storedData
 		})
 
-	// fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Richmond?page=${currentPage}&limit=30`)
+	fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Richmond?page=${currentPage}&limit=30`)
 	// fetch(`http://localhost:5000/pmsstock/20?page=${currentPage}&limit=20`)
-	fetch(`http://localhost:5000/combinedstocks/Richmond?page=${currentPage}&limit=30`)
+	// fetch(`http://localhost:5000/combinedstocks/Richmond?page=${currentPage}&limit=30`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -69,9 +69,9 @@ const updatePageContent = () => {
 			document.getElementById('richmond_table_body').innerHTML = storedData;
 		})
 
-	// fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Hyderabad?page=${currentPage}&limit=30`)
+	fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Hyderabad?page=${currentPage}&limit=30`)
 	// fetch(`http://localhost:5000/pmsstock/1?page=${currentPage}&limit=20`)
-	fetch(`http://localhost:5000/combinedstocks/Hyderabad?page=${currentPage}&limit=30`)
+	// fetch(`http://localhost:5000/combinedstocks/Hyderabad?page=${currentPage}&limit=30`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -100,9 +100,9 @@ const updatePageContent = () => {
 			document.getElementById('hyderabad_table_body').innerHTML = storedData;
 		})
 
-	// fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Haridwar?page=${currentPage}&limit=30`)
+	fetch(`https://my-server-u7xs.onrender.com/combinedstocks/Haridwar?page=${currentPage}&limit=30`)
 	// fetch(`http://localhost:5000/pmsstock/17?page=${currentPage}&limit=20`)
-	fetch(`http://localhost:5000/combinedstocks/Haridwar?page=${currentPage}&limit=30`)
+	// fetch(`http://localhost:5000/combinedstocks/Haridwar?page=${currentPage}&limit=30`)
 		.then((respond) => {
 			console.log(respond.status)
 			return respond.json();
@@ -230,14 +230,16 @@ updatePageContent();
 
 //==============================================================================
 
-const searchBarFunction = (tableId) => {
-    // let tableData = [];
+const searchBarFunction = (keys,tableId) => {
+    let tableData = [];
     // const itemsPerPage = 40;
     // let currentPage = 1;
 
+
     // Fetch data for the specific table
     // fetch(`http://localhost:5000/combinedstocks/Belmont?${tableId}?page=${currentPage}&limit=30`)
-	fetch(`http://localhost:5000/allpmcstocks/Belmont?`)
+	fetch(`http://localhost:5000/allpmcstocks/${keys}`)
+	// fetch(`https://my-server-u7xs.onrender.com/allpmcstocks/${keys}`)
         .then((response) => response.json())
         .then((response) => {
             tableData = response;
@@ -303,10 +305,10 @@ const updateTable = (tableId, data) => {
 };
 
 // Call the function to initiate the process for each table
-searchBarFunction('belmont_table_body');
-searchBarFunction('richmond_table_body');
-searchBarFunction('hyderabad_table_body');
-searchBarFunction('hariwdar_table_body');
+searchBarFunction('Belmont','belmont_table_body');
+searchBarFunction('Richmond','richmond_table_body');
+searchBarFunction('Hyderabad','hyderabad_table_body');
+searchBarFunction('Haridwar','hariwdar_table_body');
 
 
 const prevButtonFun = () => {
